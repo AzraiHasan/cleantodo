@@ -1,7 +1,7 @@
 <template>
   <div class="mb-6">
     <UCard>
-      <UTextarea color="primary" variant="outline" placeholder="Search..." size="xl" :value="modelValue"
+      <UTextarea color="primary" variant="outline" :placeholder="placeholder" size="xl" :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)" />
 
       <template #footer>
@@ -16,6 +16,10 @@ const props = defineProps({
   modelValue: {
     type: String,
     required: true
+  },
+  placeholder: {
+    type: String,
+    default: "what the note..."
   }
 })
 

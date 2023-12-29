@@ -1,8 +1,7 @@
 <template>
   <AddEditNote v-model="inputNote">
     <template #buttons>
-      <UButton label="Add Note" @click="submitNote" />
-
+      <UButton label="Add Note" @click="submitNote" :disabled="!inputNote" />
     </template>
   </AddEditNote>
   <NotesList />

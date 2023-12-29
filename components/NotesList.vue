@@ -3,7 +3,7 @@
     <UCard class="mb-6">
       {{ note.id }}
       {{ note.note }}
-      <template #footer>
+      <template #footer> 
         <div class="flex justify-around">
           <UButton label="edit" @click="storeNotes.editNote(note.id)" :to="`/editNote/${note.id}`" variant="link"
             class="text-lg" />
