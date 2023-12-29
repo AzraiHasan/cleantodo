@@ -15,6 +15,7 @@
 
 <script setup>
 const route = useRoute()
+const router = useRouter()
 const storeNotes = useStoreNotes()
 const updateNoteContent = ref('')
 const id = route.params.id
@@ -22,6 +23,7 @@ updateNoteContent.value = storeNotes.editNote(id)
 
 const saveNote = () => {
   storeNotes.updateNote(route.params.id, updateNoteContent.value)
+  router.push('/')
 }
 
 </script>

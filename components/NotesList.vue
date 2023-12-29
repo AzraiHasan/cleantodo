@@ -1,9 +1,14 @@
 <template>
   <div v-for="note in storeNotes.notes" :key="note.id">
-    <UCard class="mb-6">
-      {{ note.id }}
-      {{ note.note }}
-      <template #footer> 
+    <UCard class="mb-8">
+      <div>
+        {{ note.note }}
+      </div>
+      <UDivider class="my-4" />
+      <div class="text-sm">
+        Created at: {{ note.id }}
+      </div>
+      <template #footer>
         <div class="flex justify-around">
           <UButton label="edit" @click="storeNotes.editNote(note.id)" :to="`/editNote/${note.id}`" variant="link"
             class="text-lg" />

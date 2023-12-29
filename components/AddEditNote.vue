@@ -1,8 +1,8 @@
 <template>
   <div class="mb-6">
     <UCard>
-      <UTextarea color="primary" variant="outline" :placeholder="placeholder" size="xl" :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)" />
+      <UTextarea resize :rows="6" color="primary" variant="outline" :placeholder="placeholder" size="xl"
+        :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" />
 
       <template #footer>
         <slot name="buttons" />
