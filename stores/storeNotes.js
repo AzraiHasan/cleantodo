@@ -1,5 +1,10 @@
 export const useStoreNotes = defineStore("storeNotes", () => {
-  const notes = ref([]);
+  const notes = ref([
+    {
+      id: "id1",
+      note: "this is first note",
+    },
+  ]);
 
   function addNote(newNote) {
     let currentDate = new Date().getTime(),
@@ -24,5 +29,11 @@ export const useStoreNotes = defineStore("storeNotes", () => {
     console.log(isToEdit, "is edited");
   }
 
-  return { notes, deleteNote, editNote, addNote };
+  const getNoteContent = computed(() => {
+    let index = $route.params.id;
+
+    return notes.value[index].note;
+  });
+
+  return { notes, deleteNote, editNote, addNote, getNoteContent };
 });

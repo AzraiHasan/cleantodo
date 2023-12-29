@@ -14,7 +14,10 @@
 </template>
 
 <script setup>
+const storeNotes = useStoreNotes()
 const updateNoteContent = ref('')
+
+updateNoteContent.value = storeNotes.getNoteContent
 
 </script>
 
