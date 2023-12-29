@@ -1,9 +1,9 @@
 export const useStoreNotes = defineStore("storeNotes", () => {
   const notes = ref([
-    {
+    /* {
       id: "id1",
       note: "this is first note",
-    },
+    }, */
   ]);
 
   function addNote(newNote) {

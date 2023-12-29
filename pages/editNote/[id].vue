@@ -1,6 +1,6 @@
 <template>
   <div>
-    this is edit note {{ $route.params.id }}
+    <!-- this is edit note {{ $route.params.id }} -->
     <AddEditNote v-model="updateNoteContent" placeholder="Edit note...">
       <template #buttons>
         <div class="flex justify-end">
