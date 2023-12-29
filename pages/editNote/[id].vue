@@ -14,10 +14,11 @@
 </template>
 
 <script setup>
+const route = useRoute()
 const storeNotes = useStoreNotes()
 const updateNoteContent = ref('')
-
-updateNoteContent.value = storeNotes.getNoteContent
+const id = route.params.id
+updateNoteContent.value = storeNotes.editNote(id)
 
 </script>
 

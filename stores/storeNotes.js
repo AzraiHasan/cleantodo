@@ -25,15 +25,18 @@ export const useStoreNotes = defineStore("storeNotes", () => {
     });
   }
 
-  function editNote(isToEdit) {
+  /* function editNote(isToEdit) {
     console.log(isToEdit, "is edited");
-  }
+  } */
 
-  const getNoteContent = computed(() => {
-    let index = $route.params.id;
-
-    return notes.value[index].note;
+  const editNote = computed(() => {
+    return (id) => {
+      console.log(id, "from parameter");
+      return notes.value.filter((note) => {
+        return note.id === id;
+      })[0].note;
+    };
   });
 
-  return { notes, deleteNote, editNote, addNote, getNoteContent };
+  return { notes, deleteNote, editNote, addNote, editNote };
 });
