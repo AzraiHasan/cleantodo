@@ -1,15 +1,14 @@
 # Things todo:
 
-1.scaffold the basic CRUD functionality - DONE
-2.integrate PINIA - DONE
-3.edit note - WIP
-4.intergrate SUPABASE AUTH - WIP
-5.intergrate SUPABASE TABLE - NOT SSTARTED
-6.assign note to other users - NOT STARTED
-7.user comments - NOT STARTED
+1.(DONE)scaffold the basic CRUD functionality
+2.(DONE)integrate PINIA - DONE
+3.(DONE)edit note
+4.(WIP)intergrate SUPABASE AUTH
+5.intergrate SUPABASE TABLE
+6.assign note to other users
+7.user comments
 8....
 9...
-
 
 # Nuxt 3 Minimal Starter
 
