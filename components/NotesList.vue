@@ -18,13 +18,12 @@
           <UModal v-model="isOpen" :transition="false">
             <UCard>
               <template #header>
-                confirm delete note?
+                !! confirm delete !!
               </template>
-              <div class="p-4">
-                {{note.note}}
-              </div>
+              Are you sure you want to delete this note?
               <template #footer>
                 <div class="text-right">
+                  <UButton label="Cancel" variant="outline" class="text-lg mr-4" @click="isOpen = false" />
                   <UButton label="Delete" color="rose" variant="outline" @click="storeNotes.deleteNote(note.id)"
                     class="text-lg" />
                 </div>

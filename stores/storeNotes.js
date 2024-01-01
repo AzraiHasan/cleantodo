@@ -48,5 +48,5 @@ export const useStoreNotes = defineStore("storeNotes", () => {
     notes.value[index].note = note;
   }
 
-  return { notes, deleteNote, editNote, addNote, editNote, updateNote };
+  return { notes, deleteNote, editNote, addNote, updateNote };
 });
