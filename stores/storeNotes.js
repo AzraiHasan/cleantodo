@@ -25,10 +25,6 @@ export const useStoreNotes = defineStore("storeNotes", () => {
     });
   }
 
-  /* function editNote(isToEdit) {
-    console.log(isToEdit, "is edited");
-  } */
-
   const editNote = computed(() => {
     return (id) => {
       console.log(id, "from routes.params.id");

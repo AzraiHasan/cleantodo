@@ -1,7 +1,7 @@
 # Things todo:
 
 1.(DONE)scaffold the basic CRUD functionality
-2.(DONE)integrate PINIA - DONE
+2.(DONE)integrate PINIA
 3.(DONE)edit note
 4.(WIP)intergrate SUPABASE AUTH
 5.intergrate SUPABASE TABLE
