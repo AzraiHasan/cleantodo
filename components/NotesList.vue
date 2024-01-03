@@ -1,11 +1,11 @@
 <template>
   <div v-for="note in storeNotes.notes" :key="note.id">
     <UCard class="mb-8">
-      <div class="text-lg">
+      <div class="text-lg mb-12">
         {{ note.note }}
       </div>
-      <UDivider class="my-4" />
-      <div class="text-xs font-mono">
+      <UDivider />
+      <div class="text-xs font-mono mt-4">
         Note ID: {{ note.id }}
       </div>
       <template #footer>
@@ -25,8 +25,8 @@
               </div>
               <template #footer>
                 <div class="text-right">
-                  <UButton label="Cancel" variant="outline" class="text-lg mr-4" @click="isOpen = false" />
-                  <UButton label="Delete" color="red" @click="storeNotes.deleteNote(note.id)" class="text-lg" />
+                  <UButton label="Delete" color="red" @click="storeNotes.deleteNote(note.id)" class="text-lg mr-4" />
+                  <UButton label="Cancel" variant="outline" class="text-lg " @click="isOpen = false" />
                 </div>
               </template>
             </UCard>
