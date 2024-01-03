@@ -3,7 +3,7 @@
 1. (DONE) scaffold the basic CRUD functionality
 2. (DONE) integrate PINIA
 3. (DONE) edit note
-4. (WIP) convert note id to date/time format
+4. (WIP) convert Note id to date/time format
 5. (WIP) integrate SUPABASE AUTH
 6. integrate SUPABASE TABLE
 7. assign note to other users
