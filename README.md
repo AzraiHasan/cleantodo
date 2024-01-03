@@ -4,7 +4,8 @@
 2. (DONE) integrate PINIA
 3. (DONE) edit note
 4. (WIP) convert Note id to date/time format
-5. (WIP) integrate SUPABASE AUTH
+5. (WIP) implement useLocalStorage from vueUse
+5. integrate SUPABASE AUTH
 6. integrate SUPABASE TABLE
 7. assign note to other users
 8. user comments
