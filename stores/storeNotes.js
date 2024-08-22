@@ -1,48 +1,42 @@
-export const useStoreNotes = defineStore("storeNotes", () => {
-  const notes = ref([
-    /* {
-      id: "id1",
-      note: "this is first note",
-    }, */
-  ]);
+import { defineStore } from "pinia";
+import { ref, computed } from "vue";
 
-  function addNote(newNote) {
-    let currentDate = new Date().getTime(),
-      id = currentDate.toString();
+export const useStoreNotes = defineStore("storeNotes", {
+  state: () => ({
+    notes: ref([]),
+  }),
+  actions: {
+    addNote(newNote) {
+      let currentDate = new Date().getTime(),
+        id = currentDate.toString();
 
-    let note = {
-      id,
-      note: newNote,
-    };
+      let note = {
+        id,
+        note: newNote,
+      };
 
-    notes.value.unshift(note);
-  }
+      this.notes.unshift(note);
+    },
+    deleteNote(idToDelete) {
+      console.log(idToDelete, "is deleted");
+      this.notes = this.notes.filter((note) => note.id !== idToDelete);
+    },
+    updateNote(id, note) {
+      console.log(id, note);
 
-  function deleteNote(idToDelete) {
-    console.log(idToDelete, "is deleted");
-    notes.value = notes.value.filter((note) => {
-      return note.id !== idToDelete;
-    });
-  }
-
-  const editNote = computed(() => {
-    return (id) => {
-      console.log(id, "from routes.params.id");
-      return notes.value.filter((note) => {
-        return note.id === id;
-      })[0].note;
-    };
-  });
-
-  function updateNote(id, note) {
-    console.log(id, note);
-
-    let index = notes.value.findIndex((note) => {
-      return note.id === id;
-    });
-
-    notes.value[index].note = note;
-  }
-
-  return { notes, deleteNote, editNote, addNote, updateNote };
+      let index = this.notes.findIndex((note) => note.id === id);
+      if (index !== -1) {
+        this.notes[index].note = note;
+      }
+    },
+  },
+  getters: {
+    editNote: (state) => {
+      return (id) => {
+        console.log(id, "from routes.params.id");
+        return state.notes.filter((note) => note.id === id)[0]?.note;
+      };
+    },
+  },
+  persist: true,
 });
