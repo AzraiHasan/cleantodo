@@ -1,3 +1,4 @@
+// deprecated
 export const useStoreNotes = defineStore("storeNotes", () => {
   const notes = ref([
     /* {
