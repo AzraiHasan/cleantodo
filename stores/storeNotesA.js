@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
-import { useSupabaseClient } from "#supabase/client";
 
 export const useStoreNotes = defineStore("storeNotes", {
   state: () => ({
@@ -28,23 +27,6 @@ export const useStoreNotes = defineStore("storeNotes", {
       let index = this.notes.findIndex((note) => note.id === id);
       if (index !== -1) {
         this.notes[index].note = note;
-      }
-    },
-    async saveNotesToSupabase() {
-      const supabase = useSupabaseClient();
-
-      try {
-        const { data, error } = await supabase.from("notes").upsert(
-          this.notes.map((note) => ({
-            id: note.id,
-            content: note.note,
-          }))
-        );
-
-        if (error) throw error;
-        console.log("Notes saved successfully");
-      } catch (error) {
-        console.error("Error saving notes:", error);
       }
     },
   },
