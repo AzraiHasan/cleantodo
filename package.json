@@ -17,8 +17,11 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@nuxt/types": "^2.18.1",
     "@nuxt/ui": "^2.11.1",
     "@pinia/nuxt": "^0.5.1",
+    "@types/mongodb": "^4.0.7",
+    "mongodb": "^6.8.0",
     "pinia": "^2.1.7"
   }
 }

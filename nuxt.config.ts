@@ -6,5 +6,11 @@ export default defineNuxtConfig({
       {autoImports: ["defineStore", "acceptHMRUpdate", "storeToRefs"],},
     ]
   ],
-  
+  nitro: {
+    typescript: {
+      tsConfig: {
+        exclude: ['server/**/*']
+      }
+    }
+  }
 })
